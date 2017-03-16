@@ -1,0 +1,12 @@
+[Core]
+module = ebay
+name = Ebay
+
+[Documentation]
+description = Show Ebay listing information
+
+[Python]
+version = 3
+
+[Errbot]
+
