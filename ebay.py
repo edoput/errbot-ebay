@@ -8,7 +8,10 @@ from errbot import BotPlugin, botcmd, arg_botcmd, webhook
 def is_url(urlstring):
     parsed_url = urlparse(urlstring)
     # is a url if there is a scheme and a network location
-    return parsed_url[0] and parsed_url[1]
+    correct_url = parsed_url[0] and parsed_url[1]
+    # is a url to ebay if it contains the www.ebay string
+    is_ebay = parsed_url[1].startswith('www.ebay') or parsed_url[1].startswith('ebay')
+    return correct_url and is_ebay
 
 class Ebay(BotPlugin):
     """
